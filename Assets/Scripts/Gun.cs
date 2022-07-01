@@ -15,7 +15,7 @@ public abstract class Gun : MonoBehaviour
     public virtual void Shoot()
     {
         _tempBullet = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
-        _tempBullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shootForce, ForceMode.Impulse);
+        _tempBullet.GetComponent<Rigidbody>().AddForce(spawnPoint.forward * shootForce, ForceMode.Force);
         Destroy(_tempBullet, 5f);
     }
 }
